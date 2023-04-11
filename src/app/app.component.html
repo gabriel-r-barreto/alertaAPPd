@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark d-flex justify-content-center align-items-center">
+    <a class="navbar-brand ">ALERTA ATAQUE EM ESCOLAS</a>
+  </nav>
+
+
+  <div class="container">
+
+    <div class="card" *ngIf="cardEmergency">
+      <div class="card-header bg-danger text-white">Emergência</div>
+      <div class="card-body">
+        <h5 class="card-title">Ataque em escola</h5>
+        <p class="card-text">Mantenha calma e se é usa escola sendo atacada ligue 190</p>
+        <p class="card-text">Deixei o telefone em silencioso </p>
+        <!-- Adicione aqui os elementos HTML que deseja exibir no card de emergência -->
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3 d-flex justify-content-center align-items-center" style="height:100vh;">
+       
+       
+
+        <div class="modal" tabindex="-1" id="meuModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Cabeçalho do modal -->
+              <div class="modal-header">
+                <h5 class="modal-title">Localização</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              
+              <!-- Corpo do modal -->
+              <div class="modal-body">
+                <label for="">Nome</label>
+               <input type="text" ([ngModel])="nomeEscola">
+              </div>
+              
+              <!-- Rodapé do modal -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" (click)="emergency()">Salvar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+       
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#meuModal">ACIONAR EMERGENCIA</button>
+      </div>
+    </div>
+  </div>
