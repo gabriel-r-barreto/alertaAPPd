@@ -22,4 +22,9 @@ export class AlertServiceService {
   }
 
 
+  getGeo(latitude: any, longitude: any){
+    const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+    return this.http.get(url);
+  }
+
 }
