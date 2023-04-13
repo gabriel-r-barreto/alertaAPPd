@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { AlertServiceService } from './services/alert-service.service';
 
@@ -11,6 +11,9 @@ export class AppComponent implements OnInit {
   alerta: boolean = false;
   escola: any;
   endereco: any;
+
+  @ViewChild('close') meuBotaoRef!: ElementRef;
+ 
 
   constructor(private _AlertServiceService: AlertServiceService) {
 
@@ -57,7 +60,7 @@ export class AppComponent implements OnInit {
 
               }
               this._AlertServiceService.enviarDados(obj).subscribe(data => {
-
+  
               })
             }
 

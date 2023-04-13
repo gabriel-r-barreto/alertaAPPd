@@ -13,6 +13,7 @@
         <p class="escola">Endereço: {{endereco}}</p>
         <p class="card-text">Mantenha calma e se é sua escola sendo atacada ligue 190</p>
         <p class="card-text">Deixe o telefone em silencioso </p>
+        <p class="card-text">GRB TECH</p>
         <!-- Adicione aqui os elementos HTML que deseja exibir no card de emergência -->
       </div>
     </div>
@@ -29,7 +30,7 @@
             <div class="modal-content">
               <!-- Cabeçalho do modal -->
               <div class="modal-header">
-                <h5 class="modal-title">Localização</h5>
+                <h5 class="modal-title">Localização (ABREVIADO)</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
               </div>
               
@@ -41,7 +42,7 @@
               
               <!-- Rodapé do modal -->
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Fechar</button>
                 <button type="button" class="btn btn-primary" (click)="emergency()">Salvar</button>
               </div>
             </div>
