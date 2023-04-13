@@ -16,6 +16,24 @@
         <p class="card-text">GRB TECH</p>
         <!-- Adicione aqui os elementos HTML que deseja exibir no card de emergência -->
       </div>
+
+
+      <div class="chat-container">
+        <div class="chat-messages">
+          <!-- Lista de mensagens do chat -->
+          <div *ngFor="let message of messages" class="chat-message">
+            <span class="chat-message-user">Mensagem:</span>
+            <span class="chat-message-content">{{ message.novaMensagem }}</span>
+          </div>
+        </div>
+        <div class="chat-input">
+          <!-- Área de entrada de texto para enviar mensagens -->
+          <input [(ngModel)]="newMessage" (keydown.enter)="sendMsg()" class="chat-input-field" placeholder="Digite uma mensagem..." />
+          <button (click)="sendMsg()" class="btn btn-primary chat-send-button">Enviar</button>
+        </div>
+      </div>
+
+
     </div>
 
 

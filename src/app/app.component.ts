@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   endereco: any;
 
   @ViewChild('close') meuBotaoRef!: ElementRef;
- 
+  messages: any;
+
 
   constructor(private _AlertServiceService: AlertServiceService) {
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   title = 'alertaApp';
   cardEmergency: boolean = false;
   nomeEscola: any;
+  newMessage: any;
   latitude: any
   longitude: any
 
@@ -29,6 +31,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.inicializarDadosPrimeiraVez();
+    this.getMsg();
     this.repeat()
 
   }
@@ -60,7 +63,7 @@ export class AppComponent implements OnInit {
 
               }
               this._AlertServiceService.enviarDados(obj).subscribe(data => {
-  
+
               })
             }
 
@@ -101,9 +104,31 @@ export class AppComponent implements OnInit {
   async repeat() {
     const rep = true
     while (rep == true) {
-      await this.delay(5000);
+      await this.delay(3000);
       this.inicializarDadosPrimeiraVez();
+      this.getMsg()
     }
+  }
+
+
+  sendMsg() {
+    if (this.newMessage) {
+
+      let obj = {
+
+        "novaMensagem": this.newMessage
+
+      }
+      this._AlertServiceService.enviarMsg(obj).subscribe(data => {
+      })
+    }
+  }
+
+
+  getMsg() {
+    this._AlertServiceService.getMsg().subscribe(data => {
+      this.messages = data;
+    })
   }
 
 

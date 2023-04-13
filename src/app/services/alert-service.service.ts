@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class AlertServiceService {
 
   api = `${environment.apiUrl}/api/boolean`
+  apiMsg = `${environment.apiUrl}/api/mensagens`
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,14 @@ export class AlertServiceService {
 
   enviarDados(obj: any): Observable<any> {
     return this.http.post(this.api, obj);
+  }
+
+  enviarMsg(obj: any): Observable<any> {
+    return this.http.post(this.apiMsg, obj);
+  }
+
+  getMsg(): Observable<any> {
+    return this.http.get(this.apiMsg);
   }
 
 
