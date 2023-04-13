@@ -83,6 +83,7 @@ export class AppComponent implements OnInit {
       if (data.valor !== "") {
         this.alerta = true;
         this.escola = data.escolar
+        this.endereco = data.endereco
       } else {
         this.alerta = false
       }
