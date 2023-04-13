@@ -120,6 +120,7 @@ export class AppComponent implements OnInit {
 
       }
       this._AlertServiceService.enviarMsg(obj).subscribe(data => {
+        this.getMsg();
       })
     }
   }
